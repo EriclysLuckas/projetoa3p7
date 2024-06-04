@@ -9,7 +9,7 @@ serviceCards.forEach(card => {
         const service = card.getAttribute('data-service');
         modalTitle.innerText = `Agendar ${service}`;
         serviceInput.value = service;
-        modal.style.display = 'block';
+        modal.style.display = 'flex';
     });
 });
 
