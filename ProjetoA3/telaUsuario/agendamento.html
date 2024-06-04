@@ -60,7 +60,22 @@
 
         
     </main>
-   
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Agendar Serviço</h2>
+            <form id="service-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <input type="hidden" id="service-input" name="service">
+                <button type="submit">Agendar</button>
+            </form>
+        </div>
+    </div>
     <section class="location" id="location">
         <div class="titulo"><h1>Encontre-nos</h1></div>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="200px" height="284.929px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve">
