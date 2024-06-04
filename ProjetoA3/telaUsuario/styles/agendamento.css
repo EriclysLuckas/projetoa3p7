@@ -113,6 +113,75 @@
 
 
 /* --------FORM----------*/
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    transition: top 0.3s, font-size 0.3s;
+    pointer-events: none;
+    color: #999;
+}
+
+input[type="text"]:focus ~ label,
+input[type="email"]:focus ~ label,
+textarea:focus ~ label,
+select:focus ~ label,
+select:valid ~ label {
+    top: -10%;
+    font-size: 2ch;
+    color: #007bff;
+    z-index: 1;
+    font-weight: 500;
+}
+select:valid ~ #selectGenero label {
+top: 10px;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 @media (max-width: 600px) {
 
 
