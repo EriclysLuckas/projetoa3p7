@@ -95,6 +95,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+ 
 }
 
 .close {
@@ -113,6 +114,26 @@
 
 
 /* --------FORM----------*/
+#service-form{
+ margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 600px) {
 

@@ -65,13 +65,49 @@
             <span class="close">&times;</span>
             <h2 id="modal-title">Agendar Serviço</h2>
             <form id="service-form">
+
+                <div class="inputcontent">
                 <label for="name">Nome:</label>
+               
                 <input type="text" id="name" name="name" required><br><br>
+                 </div>
+
+                <div class="inputcontent">
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required><br><br>
+                </div>
+
+                <div class="inputcontent">
                 <label for="phone">Telefone:</label>
                 <input type="tel" id="phone" name="phone" required><br><br>
+                </div>
+
+                <div class="inputcontent">
+                    <label for="email">Cpf:</label>
+                    <input type="cpf" id="cpf" name="cpf" required><br><br>
+                    </div>
+
+                <div class="inputcontent">   
+                <select name="select">
+                        <option value="valor1">Valor 1</option>
+                        <option value="valor2" selected>Valor 2</option>
+                        <option value="valor3">Valor 3</option>
+                      </select>
+                </div>
+
+                <div class="inputcontent">   
+
+                <textarea id="w3review" name="w3review" rows="4" cols="50">
+                    At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+                    </textarea>
+                </div>
+
+                <div class="inputcontent">
                 <input type="hidden" id="service-input" name="service">
+                </div>
+
+               
+
                 <button type="submit">Agendar</button>
             </form>
         </div>
