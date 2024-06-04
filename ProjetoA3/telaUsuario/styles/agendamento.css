@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+.contentPageAgendamento h1{
+        background: linear-gradient(
+            90deg,
+            #4b92b1,
+            #6CB7D7
+    
+          );
+        
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-top: 10%;
+        font-weight: 800;
+        font-size: 3.5ch;
+        text-align: center;
+    }
+
+
+    .tiposDeAgendamentos, .listTiposDeAgendamentos{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+    .listTiposDeAgendamentos{
+        margin: 5%;
+        
+    }
+
+.listTiposDeAgendamentos li{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 30%;
+    padding: 1rem;
+    background-color: transparent;
+    box-shadow: -10px 10px 15px -3px rgba(0, 0, 0, 0.075), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    transition: .5s ease;
+    cursor: pointer;
+    &:hover{
+
+        transform: translateY(-7px);
+        
+
+    }
+}
+.listTiposDeAgendamentos li span{
+    text-transform: uppercase;
+    background: linear-gradient(
+        90deg,
+        #4b92b1,
+        #6CB7D7
+
+      );
+      margin-top: 3ch;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 2ch;
+}
+.listTiposDeAgendamentos figure{
+    width: 80%;
+}
+.listTiposDeAgendamentos figure img{
+    width: 100%;
+    padding: 2ch;
+}
+#adv {
+    padding:0;
+}
+
+
+
+
+@media (max-width: 600px) {
+
+
+    
+    .tiposDeAgendamentos, .listTiposDeAgendamentos{
+        
+        flex-wrap: wrap;
+
+    }
+    .listTiposDeAgendamentos figure{
+        width: 50%;
+    }
+
+}
+    
