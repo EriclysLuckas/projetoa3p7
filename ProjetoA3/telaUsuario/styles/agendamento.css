@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-.contentPageAgendamento h1{
+.contentPageAgendamento h1, .modal-content h1{
         background: linear-gradient(
             90deg,
             #4b92b1,
@@ -11,7 +11,7 @@
         
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        margin-top: 10%;
+        margin-top: 2%;
         font-weight: 800;
         font-size: 3.5ch;
         text-align: center;
@@ -102,11 +102,9 @@
     display: flex;
     position:relative;
        flex-direction: column;
+       border-radius: 5%;
 }
-.modal-content h2{
 
-    margin:0 0 2% 2%
-}
 
 
 .close {
@@ -149,7 +147,7 @@ form button{
     height: 5ch;
     position: absolute;
     right: 1%;
-    background-color: #007bff;
+    background-color: #6CB7D7;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -159,7 +157,7 @@ form button{
     
 }
 form button:hover {
-    background-color: #0056b3;
+    background-color: #6CB7D7;
 }
 
 .form-group {
@@ -202,16 +200,10 @@ select:valid ~ label {
 
     top: -50%;
     font-size: 2ch;
-    color: #007bff;
+    color: #6CB7D7;
     z-index: 1;
     font-weight: 500;
 }
-
-
-
-
-
-
 
 
 
@@ -224,7 +216,7 @@ input[type="email"]:focus,
 textarea:focus,
 select:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #6CB7D7;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 #service-form{
