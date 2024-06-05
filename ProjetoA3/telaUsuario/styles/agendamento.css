@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-
 .contentPageAgendamento h1{
         background: linear-gradient(
             90deg,
@@ -87,20 +86,22 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
     padding: 2ch;
     border: 1px solid #888;
-    width: 60%;
-    
+    width: 40%;
+    height: 80%;
     gap: 5%;
     text-align: center;
-    position: relative;
-    text-align: start;
+    display: flex;
+    position:relative;
+       flex-direction: column;
 }
 .modal-content h2{
 
@@ -137,10 +138,9 @@ form{
     flex-wrap: wrap;
     gap: 5%;
     flex-direction: column;
-    position: relative;
-    align-items: center;
     max-height: 100%;
     position: relative;
+
 
 
 }
@@ -148,16 +148,30 @@ form button{
     width: 10ch;
     height: 5ch;
     position: absolute;
-    bottom: 10%;
-    right: 5%;
+    right: 1%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+form button:hover {
+    background-color: #0056b3;
 }
 
 .form-group {
     position: relative;
-    margin-bottom: 20px;
     width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.button{
+    margin-top: 2ch;
+}
 input[type="text"],
 input[type="email"],
 textarea,
@@ -176,11 +190,12 @@ label {
     transition: top 0.3s, font-size 0.3s;
     pointer-events: none;
     color: #999;
-
+    
 }
 
-input[type="text"]:focus ~ label,
-input[type="email"]:focus ~ label,
+input[type="text"]:focus ~ label,input[type="text"]:valid ~ label,
+input[type="email"]:focus ~ label,input[type="text"]:valid ~ label,
+input[type="email"]:valid ~ label,textarea:valid ~ label,
 textarea:focus ~ label,
 select:focus ~ label,
 select:valid ~ label {
@@ -191,28 +206,14 @@ select:valid ~ label {
     z-index: 1;
     font-weight: 500;
 }
-select:valid ~ #selectGenero label {
-top: 10px;
-}
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute;
-    bottom: 0;
-    top: 87%;
 
-}
 
-button:hover {
-    background-color: #0056b3;
-}
+
+
+
+
+
+
 
 textarea {
     resize: none;
@@ -227,8 +228,12 @@ select:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 #service-form{
-    padding: 2ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
+    flex-direction: row;
+    gap: 2%;
 }
 
 @media (max-width: 600px) {
@@ -252,6 +257,7 @@ select:focus {
 .form-group{
     width: 100%;
 }
+
 .form-group button{
     bottom: 50%;
     position: absolute;
