@@ -1,0 +1,225 @@
+
+.app-container {
+    display: flex;
+    height: 100%;
+    background-color: #F3F5F7;
+    position: relative;
+}
+
+.flex-container {
+    position:absolute;
+    margin: 2rem 4rem;
+    width: 90%;
+    height: 90%;
+    display: flex;    
+    background-color: #F3F5F7;
+}
+
+/*container*/
+.container-cont{
+    border-radius: 10px;
+    width: 70%;
+    background-color: #FFFFFF;
+}
+
+.container-arg h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Lora", serif;
+    margin: 2rem 0;
+}
+
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*fim do container*/
+
+/*inicio da de progresso*/
+.container-progress{
+    display: flex;
+    background-color: #F3F5F7;
+    padding: 0 1rem;
+    margin: 0 1rem 0 11rem;
+    border: 2pix solid black;
+}
+
+.progres-texto{
+    margin-top: 3rem;
+    font-family:Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.te{
+    font-size: 20px;
+    padding-top: 0.9rem;
+}
+
+.te-color{
+    color: #A4B1BF;
+}
+
+.progres{
+    width: 0.4rem;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    background-color: #D6DDE3;
+    border-radius: 3px;
+}
+
+.progres-bar{    
+    height: 100%;
+    width: 100%;
+    background-color: #4caf50;
+    border-radius: 4px;
+}
+/*fim da de progresso*/
+
+.button[data-v-527ce04f] {
+    background-color: #1576d1;
+    border-radius: 6px;
+    color:white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -.02rem;
+    line-height: 2.8rem;
+    padding: 10px 18px;
+    margin-top: 2rem;
+    position: relative;
+    text-decoration: none;
+}
+
+/*date*/
+.a {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+}
+.calendar-container {
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+    position: relative;  
+}
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+  
+  
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+  
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.weekdays div {
+    text-align: center;
+    font-weight: bold;
+}
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.day {
+    padding: 10px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+}
+  
+.day:nth-child(1),
+.day:nth-child(7),
+.day:nth-child(8),
+.day:nth-child(14),
+.day:nth-child(15),
+.day:nth-child(21),
+.day:nth-child(22),
+.day:nth-child(28),
+.day:nth-child(29),
+.day:nth-child(35),
+.day:nth-child(36) {
+    pointer-events: none; 
+}
+  
+.day.selected {
+   background-color: #0074D9; /* Azul */
+   color: #fff;
+}
+  
+.previous-month {
+    opacity: 0.5;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: white; 
+    z-index: 1; 
+    display: none;
+}
+
+.info {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	font-weight: 600;
+	font-size: 1em;
+	padding: 30px 40px;
+}
+
+.info div:not(.observations) {
+	margin-bottom: 30px;
+}
+
+.info span {
+	font-weight: 300;
+}
+
+.info .date {
+	display: flex;
+	justify-content: space-between;
+}
+
+.info .date p {
+	width: 50%;
+}
+
+.info .address p {
+	width: 100%;
+}
