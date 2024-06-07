@@ -336,7 +336,7 @@ text-align: center;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-svg{
+.svg{
     width: 4ch;
     height:6ch;
     animation: seta 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) alternate infinite;
