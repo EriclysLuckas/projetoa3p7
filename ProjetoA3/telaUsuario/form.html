@@ -3,45 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/ProjetoA3/telaUsuario/styles/agendamento.css">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="/ProjetoA3/telaUsuario//styles/agendamento.css">
+    <link rel="stylesheet" href="/ProjetoA3/telaUsuario/styles/style.css">
+    <link rel="stylesheet" href="/ProjetoA3/telaUsuario/styles/data.css">
 </head>
 <body>
-    <form id="service-form">
-        <div class="form-group">
-            <input type="text" id="nome" name="nome" required>
-            <label for="nome">Nome Completo</label>
-        </div>
-        <div class="form-group">
-            <input type="text" id="cpf" name="cpf" required>
-            <label for="cpf">CPF</label>
-        </div>
-        <div class="form-group">
-            <input type="text" id="contato" name="contato" required>
-            <label for="contato">Contato</label>
-        </div>
-        <div class="form-group">
-            <input type="email" id="email" name="email" required>
-            <label for="email">E-mail</label>
-        </div>
-        <div class="form-group" id="selectGenero">
-            <select id="genero" name="genero" required>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="outro">Outro</option>
-            </select>
-            <label for="genero">Gênero</label >
-        </div>
-        <div class="form-group">
-            <textarea id="motivo" name="motivo" maxlength="100" required></textarea>
-            <label for="motivo">Motivo da Consulta</label>
-        </div>
+    <header>
+        <section class="contentHeader" id="contentHeader">
+            <figure class="logoItem">
+               <a href="/index.html"> <img src="/ProjetoA3/img/png-transparent.png" alt="" class="logotipo"></a>
+            </figure>
+            <ul class="listaHeader">
+                <li><a  href="#location" class="linksContent"><strong>Encontre-nos</strong></a></li>
+                <li><a href="#footer-container"  class="linksContent"><strong>Contatos</strong></a></li>
+            </ul>
+
+            <div class="contentMenu">
+                <img src="/ProjetoA3/img/person.png" alt="" class="menuIcon">
+            </div>
+
+        </section>
+    </header>
     
+    <main>
+        <form id="service-form">
             <div class="form-group">
-        <input type="hidden" id="service-input" name="service">
-        <a href="/ProjetoA3/telaUsuario/data.html"><button type="submit" class="btnReserv3">Agendar</button></a>
-    </div>
+                <input type="text" id="nome" name="nome" required>
+                <label for="nome">Nome Completo</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="cpf" name="cpf" required>
+                <label for="cpf">CPF</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="contato" name="contato" required>
+                <label for="contato">Contato</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">E-mail</label>
+            </div>
+            <div class="form-group" id="selectGenero">
+                <select id="genero" name="genero" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <label for="genero">Gênero</label >
+            </div>
+            <div class="form-group">
+                <textarea id="motivo" name="motivo" maxlength="100" required></textarea>
+                <label for="motivo">Motivo da Consulta</label>
+            </div>
+        
+                <div class="form-group">
+            <input type="hidden" id="service-input" name="service">
+            <a href="/ProjetoA3/telaUsuario/data.html"><button type="submit" class="btnReserv3">Agendar</button></a>
+        </div>
+        
+        </form>
+    </main>
     
-    </form> 
+    <section class="location" id="location">
+        <div class="titulo"><h1>Encontre-nos</h1></div>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="200px" height="284.929px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve">
+                
+                <g>
+                    <path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441   L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082   c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647   c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>
+                </g>
+                </svg>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15836.292177169391!2d-34.873544!3d-7.117534!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace7e4ad474b33%3A0xf369438c4f027a27!2sFaculdade%20da%20Para%C3%ADba!5e0!3m2!1spt-BR!2sbr!4v1717088536747!5m2!1spt-BR!2sbr" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>     
+       </section>
+    <footer>
+
+       
+
+        <section class="footer-container" id="footer-container">
+           
+            <figure class="footer-logo">
+                <img src="/ProjetoA3/img/png-transparent.png" alt="Logo">
+            </figure>
+
+            <div class="footer-icons">
+                <div class="groupIcon">
+                    <div class="instagram iconFooter">
+                    <img src="/ProjetoA3/img/instagram.png" alt="">
+                    </div>
+                    
+                </div>
+                <div class="groupIconWhatsapp">
+                    <div class="whatsapp iconFooter">
+                    <img src="/ProjetoA3/img/whatsapp.png" alt="">
+                    </div>
+                    
+                </div>
+                
+                <div class="groupIconTelefone">
+                    <div class="telefone iconFooter">
+                    <img src="/ProjetoA3/img/telefone.png" alt="">
+                    </div>
+                    
+                </div>
+                <div class="groupIconEmail">
+                    <div class="email iconFooter">
+                    <img src="/ProjetoA3/img/email.png" alt="">
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <section class="footerLinks">
+                <ul class="listaHeader">
+                <li><a href="#contentHeader" class="linksContent"><strong>Home</strong></a></li>
+                <li><a target="_blank" href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwihxqC8-7WGAxV5H60GHY5QBLIYABAAGgJwdg&ase=2&gclid=EAIaIQobChMIocagvPu1hgMVeR-tBh2OUASyEAAYASAAEgJTlvD_BwE&ohost=www.google.com&cid=CAASJORo2z_L04-7l8xN5wwLLeoyb_LUUmydpFupoADMiGPWlJiZ_g&sig=AOD64_2ZUqtr8eFJXuDRXgsQQrSszneAxA&q&nis=4&adurl&ved=2ahUKEwih7pW8-7WGAxUAqJUCHXi_DFgQ0Qx6BAgnEAE"  class="linksContent"><strong>Nossa Equipe</strong></a></li>
+            </ul>
+            </section>
+         
+        </section>
+
+        <div class="footer-copyright">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="data.js"></script>
 </body>
 </html>

@@ -129,7 +129,7 @@
 /* --------FORM----------*/
 form{
 
-    width: 100%;
+    width: 50%;
     padding: 1ch;
     display: flex;
     justify-content: start;
@@ -198,7 +198,7 @@ textarea:focus ~ label,
 select:focus ~ label,
 select:valid ~ label {
 
-    top: -50%;
+    top: -45%;
     font-size: 2ch;
     color: #6CB7D7;
     z-index: 1;
@@ -219,14 +219,18 @@ select:focus {
     border-color: #6CB7D7;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-#service-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    flex-direction: row;
-    gap: 2%;
-}
+
+    #service-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: row;
+        gap: 2.3ch;
+        margin: 10ch;
+    }
+    
+
 
 @media (max-width: 600px) {
 
