@@ -6,6 +6,7 @@
     <title>Agendamento</title>
     <link rel="stylesheet" href="/ProjetoA3/telaUsuario//styles/agendamento.css">
     <link rel="stylesheet" href="/ProjetoA3/telaUsuario/styles/style.css">
+    <link rel="stylesheet" href="/ProjetoA3/telaUsuario/styles/data.css">
 </head>
 <body>
     <header>
@@ -64,42 +65,84 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h1 id="modal-title">Agendar Serviço</h1>
-            <form id="service-form">
-                <div class="form-group">
-                    <input type="text" id="nome" name="nome" required>
-                    <label for="nome">Nome Completo</label>
+            <section class="app-container">
+                <div class="flex-container">
+                   
+                    <article class="container-cont">
+                      
+        
+                        <section class="a">
+                            <div class="calendar-container">
+                              <div class="header">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                                </svg>
+                                <h1 id="monthYear"></h1>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16" id="currentMonth">
+                                  <path d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"/>
+                                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                                </svg>
+                              </div>
+                              <div class="navigation">
+                                <button id="prev">&lt;</button>
+                                <button id="next">&gt;</button>
+                              </div>
+                              <div class="weekdays">
+                                <div>Dom</div>
+                                <div>Seg</div>
+                                <div>Ter</div>
+                                <div>Qua</div>
+                                <div>Qui</div>
+                                <div>Sex</div>
+                                <div>Sáb</div>
+                              </div>
+                              <div id="days" class="days"></div>
+                              <a href="/ProjetoA3/telaUsuario/form.html" class="button button--margin" link-type="url" data-v-527ce04f="">Confirmar</a>
+                                <div class="overlay">
+                                  <div class="info">
+        
+                                    <div class="info-img">
+                                      <img src="/image/agendamento.jpeg" alt="" height="40%">
+                                    </div>
+        
+                                    <div class="observations">
+                                      <p>
+                                        Horario: <span>Horario de Funcionamento</span>
+                                      </p>
+                                    </div>
+        
+                                    <div class="date">
+                                      <p class="info-date">
+                                        Time: <span>6:30 PM AS 12:00</span>
+                                      </p>
+                                      <p class="info-time">
+                                        Time: <span>13:30 AM AS 17:00</span>
+                                      </p>
+                                    </div>
+                                    <div class="address">
+                                      <p>
+                                        Endereço: <span>Av. Mons. Walfredo Leal 512 (Tambiá), João Pessoa, PB, 58020-540</span>
+                                      </p>
+                                    </div>
+        
+                                    <div class="observations">
+                                      <p>
+                                       <span>O horario da sua consulta chegara no Email</span>
+                                      </p>
+                                    </div>
+        
+                                    <div class="observations">
+                                      <p>
+                                        Observations: <span>Chegar 15 minutes do seu horario</span>
+                                      </p>
+                                    </div>
+        
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </article>
                 </div>
-                <div class="form-group">
-                    <input type="text" id="cpf" name="cpf" required>
-                    <label for="cpf">CPF</label>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="contato" name="contato" required>
-                    <label for="contato">Contato</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required>
-                    <label for="email">E-mail</label>
-                </div>
-                <div class="form-group" id="selectGenero">
-                    <select id="genero" name="genero" required>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                    <label for="genero">Gênero</label >
-                </div>
-                <div class="form-group">
-                    <textarea id="motivo" name="motivo" maxlength="100" required></textarea>
-                    <label for="motivo">Motivo da Consulta</label>
-                </div>
-            
-                    <div class="form-group">
-                <input type="hidden" id="service-input" name="service">
-                <a href="/ProjetoA3/telaUsuario/data.html"><button type="submit" class="btnReserv3">Agendar</button></a>
-            </div>
-            
-            </form>
         </div>
     </div>
     <section class="location" id="location">
@@ -164,5 +207,6 @@
         </div>
     </footer>
     <script src="./script.js"></script>
+    <script src="data.js"></script>
 </body>
 </html>
