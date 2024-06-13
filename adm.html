@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Preview</title>
+    <link rel="stylesheet" href="/ProjetoA3/telaAdm/css/Adm.css">
+    <script src="/ProjetoA3/telaAdm/js/adm.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+    <nav class="admin-menu">
+            <h2>Adiministrador</h2>
+            <ul>
+                <li><a href="#" onclick="showPreviewScreen()">Preview do Formulário</a></li>
+                <li><a href="#" onclick="showListScreen()">Escritorios</a></li>
+                <li><a href="/ProjetoA3/telaAdm/listAgen.html" onclick="showListScreen()"> Lista de agendamentos</a></li>
+                <li><a href="/ProjetoA3/telaAdm/DetalhesAgen.html" onclick="showListScreen()"> Detalhe do agendamento</a></li>
+            </ul>
+    </nav>
+
+
+<div class="admin-content">
+    <div class="screen" id="preview-screen">
+    <div class="form-preview">
+                    <h2>Preview do Formulário</h2>
+                    <p>Em Produção</p>
+                    <p>Em produção</p>
+    </div>
+    </div>
+    <div class="screen" id="list-screen" style="display: none;">
+        <div class="container">
+                    <h2>Escritorios</h2>
+                    <button id="add-new" onclick="showDetailForm()">Adicionar Novo</button>
+                    <ul id="institution-list">
+                        <li data-id="1">
+                            <h3>ADVOCACIA</h3>
+                            <p>Horário: <span class="schedule">08:00 - 18:00</span></p>
+                            <p>Descrição: <span class="description">Descrição da ADVOCACIA</span></p>
+                            <a href="#" onclick="showDetailForm(1)">Editar</a>
+                            <a href="#" class="remove" onclick="removeInstitution(1)">Cancelar</a>
+                        </li>
+
+                        <li data-id="1">
+                            <h3>ADVOCACIA</h3>
+                            <p>Horário: <span class="schedule">08:00 - 18:00</span></p>
+                            <p>Descrição: <span class="description">Descrição da ADVOCACIA</span></p>
+                            <a href="#" onclick="showDetailForm(1)">Editar</a>
+                            <a href="#" class="remove" onclick="removeInstitution(1)">Cancelar</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+    <div class="screen" id="detail-screen" style="display: none;">
+        <div class="detail-container">
+                    <h2 id="detail-title">Adicionar/Editar Instituição</h2>
+                    <form id="edit-form">
+                        <label for="name">Nome da Instituição:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="schedule">Horário de Atendimentos:</label>
+                        <input type="text" id="schedule" name="schedule" required>
+                        <label for="description">Descrição:</label>
+                        <textarea id="description" name="description" required></textarea>
+                        <button type="submit">Salvar</button>
+                        <button type="button" onclick="showListScreen()">Cancelar</button>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

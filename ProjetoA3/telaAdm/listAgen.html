@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Lista de Agendamentos</title>
+    <link rel="stylesheet" href="/ProjetoA3/telaAdm/css/list.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-menu">
+            <h2>Administrador</h2>
+            <ul>
+                <li><a href="/adm.html" onclick="showPreviewScreen(event)">Preview do Formulário</a></li>
+                <li><a href="/adm.html" onclick="showListScreen(event)">Escritórios</a></li>
+                <li><a href="#" onclick="showListScreen(event)">Lista de Agendamentos</a></li>
+                <li><a href="/ProjetoA3/telaAdm/DetalhesAgen.html" onclick="showDetailForm(event)">Adicionar Novo Agendamento</a></li>
+            </ul>
+        </nav>
+
+        <div class="admin-content">
+            <div class="screen" id="list-screen">
+                <div class="container">
+                    <h1>Lista de Agendamentos</h1>
+                    <div class="filtros">
+                        <select id="filtro-status">
+                            <option value="todos">Todos</option>
+                            <option value="aguardando">Aguardando</option>
+                            <option value="agendado">Agendado</option>
+                            <option value="atendido">Atendido</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                        <select id="filtro-tipo">
+                            <option value="todos">Todos os Tipos</option>
+                            <option value="nutricao">Nutrição</option>
+                            <option value="fisioterapia">Fisioterapia</option>
+                            <option value="advocacia">Advocacia</option>
+                            <option value="financeiro">Financeiro</option>
+                        </select>
+                    </div>
+                    <table id="lista-agendamentos">
+                        <!-- Preencha com os dados dos agendamentos via JavaScript -->
+                    </table>
+
+                    <!-- Modal -->
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span id="modal-close" class="modal-close">&times;</span>
+                            <p id="modal-message"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen" id="detail-screen" style="display: none;">
+                <div class="detail-container">
+                    <h2 id="detail-title">Adicionar/Editar Instituição</h2>
+                    <form id="edit-form">
+                        <label for="name">Nome da Instituição:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="schedule">Horário de Atendimentos:</label>
+                        <input type="text" id="schedule" name="schedule" required>
+                        <label for="description">Descrição:</label>
+                        <textarea id="description" name="description" required></textarea>
+                        <button type="submit">Salvar</button>
+                        <button type="button" onclick="showListScreen()">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/ProjetoA3/telaAdm/js/list.js"></script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

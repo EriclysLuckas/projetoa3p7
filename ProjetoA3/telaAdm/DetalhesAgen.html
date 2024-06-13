@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Detalhes do Agendamento</title>
+    <link rel="stylesheet" href="/ProjetoA3/telaAdm/css/Detalhes-agen.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-menu">
+            <h2>Administrador</h2>
+            <ul>
+                <li><a href="/adm.html" onclick="showPreviewScreen(event)">Preview do Formulário</a></li>
+                <li><a href="/adm.html" onclick="showListScreen(event)">Escritórios</a></li>
+                <li><a href="/ProjetoA3/telaAdm/listAgen.html" onclick="showListScreen(event)">Lista de Agendamentos</a></li>
+                <li><a href="#" onclick="showDetailForm(event)">Adicionar Novo Agendamento</a></li>
+            </ul>
+        </nav>
+
+        <div class="admin-content">
+            <div class="screen" id="list-screen">
+                <div class="container">
+                    <h1>Detalhes do Agendamento</h1>
+                    <form id="formulario-agendamento">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" readonly>
+
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" readonly>
+
+                        <label for="contato">Contato:</label>
+                        <input type="text" id="contato" name="contato" readonly>
+
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" readonly>
+
+                        <label for="genero">Gênero:</label>
+                        <input type="text" id="genero" name="genero" readonly>
+
+                        <div class="motivo-container">
+                            <label for="motivo">Motivo:</label>
+                            <select id="motivo" name="motivo">
+                                <option value="consulta">Motivo da Consulta</option>
+                                <option value="cancelamento">Motivo do Cancelamento</option>
+                            </select>
+                        </div>
+
+                        <textarea id="detalhes-motivo" name="detalhes-motivo" rows="4"></textarea>
+
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="screen" id="detail-screen" >
+                <div class="detail-container">
+                    <h2 id="detail-title">Adicionar/Editar Instituição</h2>
+                    <form id="edit-form">
+                        <label for="name">Nome da Instituição:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="schedule">Horário de Atendimentos:</label>
+                        <input type="text" id="schedule" name="schedule" required>
+                        <label for="description">Descrição:</label>
+                        <textarea id="description" name="description" required></textarea>
+                        <button type="submit">Salvar</button>
+                        <button type="button" onclick="showListScreen()">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/ProjetoA3/telaAdm/js/DetalhesAgen.js"></script>
+
+    <script>
+        
+    </script>
+</body>
+</html>
+
