@@ -3,80 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador - Detalhes do Agendamento</title>
-    <link rel="stylesheet" href="/ProjetoA3/telaAdm/css/Detalhes-agen.css">
+    <title>Detalhes do Agendamento</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label, select {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: calc(100% - 12px); /* Ajuste para compensar a largura da seta do select */
+        }
+
+        button {
+            background-color: #0074D9;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .motivo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        button:hover {
+            background-color: #005ea6;
+        }
+    </style>
 </head>
 <body>
     <div class="admin-container">
-        <nav class="admin-menu">
-            <h2>Administrador</h2>
-            <ul>
-                <li><a href="/adm.html" onclick="showPreviewScreen(event)">Preview do Formulário</a></li>
-                <li><a href="/adm.html" onclick="showListScreen(event)">Escritórios</a></li>
-                <li><a href="/ProjetoA3/telaAdm/listAgen.html" onclick="showListScreen(event)">Lista de Agendamentos</a></li>
-                <li><a href="#" onclick="showDetailForm(event)">Adicionar Novo Agendamento</a></li>
-            </ul>
-        </nav>
-
-        <div class="admin-content">
-            <div class="screen" id="list-screen">
-                <div class="container">
-                    <h1>Detalhes do Agendamento</h1>
-                    <form id="formulario-agendamento">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" readonly>
-
-                        <label for="cpf">CPF:</label>
-                        <input type="text" id="cpf" name="cpf" readonly>
-
-                        <label for="contato">Contato:</label>
-                        <input type="text" id="contato" name="contato" readonly>
-
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" readonly>
-
-                        <label for="genero">Gênero:</label>
-                        <input type="text" id="genero" name="genero" readonly>
-
-                        <div class="motivo-container">
-                            <label for="motivo">Motivo:</label>
-                            <select id="motivo" name="motivo">
-                                <option value="consulta">Motivo da Consulta</option>
-                                <option value="cancelamento">Motivo do Cancelamento</option>
-                            </select>
-                        </div>
-
-                        <textarea id="detalhes-motivo" name="detalhes-motivo" rows="4"></textarea>
-
-                    </form>
-                    </div>
+        <nav class="admin-menu" id="admin-menu">
+            <div class="admin-profile">
+                <img src="imagem/avatar.jpg" alt="Admin Profile Picture">
+                <div class="admin-profile-info">
+                    <h3>Administrador</h3>
+                    <p>FPB</p>
                 </div>
             </div>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> <span class="menu-text">Home</span></a></li>
+                <li><a href="configuração.html"><i class="fas fa-cog"></i> <span class="menu-text">Configurações da instituição</span></a></li>
+                <li><a href="detalhe.html"><i class="fas fa-info-circle"></i> <span class="menu-text">Detalhe da instituição</span></a></li>
+                <li><a href="listaForm.html"><i class="fas fa-info-circle"></i> <span class="menu-text">Detalhe de Formulario</span></a></li>
+                <li><a href="listaAgen.html"><i class="fas fa-info-circle"></i> <span class="menu-text">Lista de agendamento</span></a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> <span class="menu-text">Logout</span></a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+        <div class="admin-content">
+            <div class="container">
+                <h1>Detalhes do Agendamento</h1>
+                <form id="formulario-agendamento">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" readonly>
 
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" readonly>
 
-            <div class="screen" id="detail-screen" >
-                <div class="detail-container">
-                    <h2 id="detail-title">Adicionar/Editar Instituição</h2>
-                    <form id="edit-form">
-                        <label for="name">Nome da Instituição:</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="schedule">Horário de Atendimentos:</label>
-                        <input type="text" id="schedule" name="schedule" required>
-                        <label for="description">Descrição:</label>
-                        <textarea id="description" name="description" required></textarea>
-                        <button type="submit">Salvar</button>
-                        <button type="button" onclick="showListScreen()">Cancelar</button>
-                    </form>
-                </div>
+                    <label for="contato">Contato:</label>
+                    <input type="text" id="contato" name="contato" readonly>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" readonly>
+
+                    <label for="genero">Gênero:</label>
+                    <input type="text" id="genero" name="genero" readonly>
+
+                    <div class="motivo-container">
+                        <label for="motivo">Motivo:</label>
+                        <select id="motivo" name="motivo">
+                            <option value="consulta">Motivo da Consulta</option>
+                            <option value="cancelamento">Motivo do Cancelamento</option>
+                        </select>
+                    </div>
+
+                    <textarea id="detalhes-motivo" name="detalhes-motivo" rows="4"></textarea>
+                </form>
             </div>
         </div>
     </div>
 
-    <script src="/ProjetoA3/telaAdm/js/DetalhesAgen.js"></script>
+    <div class="feedback-message" id="feedback-message"></div>
 
     <script>
-        
+        let currentEditId = null;
+
+        function showListScreen() {
+            const listScreen = document.getElementById('list-screen');
+            if (listScreen) {
+                listScreen.style.display = 'block';
+            }
+        }
+
+        // Simule os dados preenchidos pelo usuário (você pode buscar esses dados de um servidor ou banco de dados)
+        const agendamentoSelecionado = {
+            nome: 'Douglas da slva',
+            cpf: '123.456.789-00',
+            contato: '(11) 98765-4321',
+            email: 'douglas@gmail.com',
+            genero: 'Masculino',
+            motivo: 'consulta' // Altere para 'consulta' para funcionar com o select
+        };
+
+        // Preenche os campos do formulário com os dados do agendamento selecionado
+        document.getElementById('nome').value = agendamentoSelecionado.nome;
+        document.getElementById('cpf').value = agendamentoSelecionado.cpf;
+        document.getElementById('contato').value = agendamentoSelecionado.contato;
+        document.getElementById('email').value = agendamentoSelecionado.email;
+        document.getElementById('genero').value = agendamentoSelecionado.genero;
+        document.getElementById('motivo').value = agendamentoSelecionado.motivo;
+
+        // Event listener para o campo "Motivo"
+        const motivoSelect = document.getElementById('motivo');
+        const detalhesMotivoTextarea = document.getElementById('detalhes-motivo');
+
+        motivoSelect.addEventListener('change', () => {
+            const selectedMotivo = motivoSelect.value;
+            if (selectedMotivo === 'consulta') {
+                detalhesMotivoTextarea.value = 'Detalhes da consulta...';
+            } else if (selectedMotivo === 'cancelamento') {
+                detalhesMotivoTextarea.value = 'Detalhes do cancelamento...';
+            } else {
+                detalhesMotivoTextarea.value = ''; // Limpa o textarea se nenhuma opção for selecionada
+            }
+        });
+
+        // Dispara o event listener de mudança para preencher o campo "detalhes-motivo" inicialmente
+        motivoSelect.dispatchEvent(new Event('change'));
+
+        // Event listener para o formulário (pode ser usado para salvar os dados)
+        document.getElementById('formulario-agendamento').addEventListener('submit', (event) => {
+            event.preventDefault();
+            // Lógica para salvar os dados (implemente conforme sua necessidade)
+            console.log('Dados salvos!');
+        });
+
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const menu = document.getElementById('admin-menu');
+            const profileInfo = document.querySelector('.admin-profile-info');
+            menu.classList.toggle('open');
+            profileInfo.classList.toggle('open');
+        });
     </script>
 </body>
 </html>
-

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-menu" id="admin-menu">
+            <div class="admin-profile">
+                <img src="imagem/avatar.jpg" alt="Admin Profile Picture">
+                <div class="admin-profile-info">
+                    <h3>Administrador</h3>
+                    <p>FPB</p>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> <span class="menu-text">Home</span></a></li>
+                <li><a href="configuração.html"><i class="fas fa-cog"></i> <span class="menu-text">Configurações da instituição</span></a></li>
+                <li><a href="detalhe.html"><i class="fas fa-info-circle"></i> <span class="menu-text">Detalhe da instituição</span></a></li>
+                <li><a href="listaForm.html"><i class="fas fa-info-circle"></i> <span class="menu-text">Detalhe de Formulario</span></a></li>
+                <li><a href="listaAgen.html"><i class="fas fa-info-circle"></i> <span class="menu-text">Lista de agendamento</span></a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> <span class="menu-text">Logout</span></a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+        <div class="admin-content">
+            <div class="home-content">
+                <h2>Bem-vindo ao Painel do Administrador</h2>
+                <p>Utilize o menu ao lado para navegar entre as funcionalidades administrativas.</p>
+                <div class="stats">
+                    <div>
+                        <h3>Instituições</h3>
+                        <p id="institution-count">0</p>
+                    </div>
+                    <div>
+                        <h3>Configurações</h3>
+                        <p>Personalize sua instituição</p>
+                    </div>
+                    <div>
+                        <h3>Suporte</h3>
+                        <p>Entre em contato</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        
+            const institutions = JSON.parse(localStorage.getItem('institutions')) || [];
+            document.getElementById('institution-count').textContent = institutions.length;
+        });
+
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const menu = document.getElementById('admin-menu');
+            menu.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
