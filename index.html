@@ -3,122 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/ProjetoA3/telaUsuario/styles/style.css">
-    
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Raleway, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(90deg, #C7C5F4, #776BCC);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .screen {
+            background: linear-gradient(90deg, #5D54A4, #7C78B8);
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            padding: 20px;
+            box-shadow: 0px 0px 24px #5C5696;
+            border-radius: 10px;
+        }
+
+        .screen__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .screen__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+        }
+
+        .screen__background__shape {
+            transform: rotate(45deg);
+            position: absolute;
+        }
+
+        .screen__background__shape1 {
+            height: 520px;
+            width: 520px;
+            background: #FFF;
+            top: -50px;
+            right: 120px;
+            border-radius: 0 72px 0 0;
+        }
+
+        .screen__background__shape2 {
+            height: 220px;
+            width: 220px;
+            background: #6C63AC;
+            top: -172px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape3 {
+            height: 540px;
+            width: 190px;
+            background: linear-gradient(270deg, #5D54A4, #6A679E);
+            top: -24px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape4 {
+            height: 400px;
+            width: 200px;
+            background: #7E7BB9;
+            top: 420px;
+            right: 50px;
+            border-radius: 60px;
+        }
+
+        .login {
+            width: 100%;
+            padding: 30px;
+            padding-top: 50px;
+            position: relative;
+        }
+
+        .login__field {
+            padding: 20px 0px;
+            position: relative;
+        }
+
+        .login__icon {
+            position: absolute;
+            top: 30px;
+            color: #7875B5;
+        }
+
+        .login__input {
+            border: none;
+            border-bottom: 2px solid #D1D1D4;
+            background: none;
+            padding: 10px;
+            padding-left: 24px;
+            font-weight: 700;
+            width: 100%;
+            transition: .2s;
+        }
+
+        .login__input:active,
+        .login__input:focus,
+        .login__input:hover {
+            outline: none;
+            border-bottom-color: #6A679E;
+        }
+
+        .login__submit {
+            background: #fff;
+            font-size: 14px;
+            margin-top: 30px;
+            padding: 16px 20px;
+            border-radius: 26px;
+            border: 1px solid #D4D3E8;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            color: #4C489D;
+            box-shadow: 0px 2px 2px #5C5696;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .login__submit:active,
+        .login__submit:focus,
+        .login__submit:hover {
+            border-color: #6A679E;
+            outline: none;
+        }
+
+        .button__icon {
+            font-size: 24px;
+            margin-left: auto;
+            color: #7875B5;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .screen {
+                padding: 10px;
+            }
+
+            .login {
+                padding-top: 30px;
+            }
+
+            .login__submit {
+                padding: 14px 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <section class="contentHeader" id="contentHeader">
-            <figure class="logoItem">
-                <img src="/ProjetoA3/img/png-transparent.png" alt="" class="logotipo">
-            </figure>
-            <ul class="listaHeader">
-                <li><a  href="#location" class="linksContent"><strong>Encontre-nos</strong></a></li>
-                <li><a href="#footer-container"  class="linksContent"><strong>Contatos</strong></a></li>
-            </ul>
-
-            <div class="contentMenu">
-                <img src="/ProjetoA3/img/person.png" alt="" class="menuIcon">
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <form id="login-form" class="login">
+                    <div class="login__field">
+                        <label for="login-type">Tipo de Login:</label>
+                        <select id="login-type" class="login__input" name="login-type" required>
+                            <option value="institucional">Institucional</option>
+                            <option value="profissional">Profissional</option>
+                        </select>
+                    </div>
+                    <div class="login__field">
+                        <label for="identifier">Login/Email:</label>
+                        <input type="text" id="identifier" class="login__input" name="identifier" required>
+                    </div>
+                    <div class="login__field">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" class="login__input" name="senha" required>
+                    </div>
+                    <button type="submit" class="login__submit">Login <i class="button__icon fas fa-chevron-right"></i></button>
+                    <p class="error-message" id="error-message"></p>
+                </form>
             </div>
-
-        </section>
-    </header>
-    
-    <main>
-        <section class="contentPage">
-
-            <figure><img src="/ProjetoA3/img/imgo.png" alt=""></figure>
-
-            <article class="articleApresentacao">
-                
-                <section class="apresentacao">
-                    <div class="text-reveal"> <h1>Agendamento de serviços</h1>
-                        </div>
-                    <p>Nosso sistema permite que você agende suas consultas e serviços de forma fácil e rápida. Com nosso sistema, você pode criar,  agendar suas consultas online com total comodidade </p>
-
-                </section>
-                
-                <section class="sectionButtonReserv">
-        
-                  <a href="./ProjetoA3/telaUsuario/agendamento.html">  <button class="btnReserv3"  ><strong>AGENDAR</strong></button></a>
-                </section>
-
-                
-            </article>
-
-
-
-
-        </section>
-
-
-
-        
-    </main>
-    <section class="location" id="location">
-        <div class="titulo"><h1>Encontre-nos</h1></div>
-            <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="200px" height="284.929px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve">
-                
-                <g>
-                    <path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441   L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082   c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647   c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>
-                </g>
-                </svg>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15836.292177169391!2d-34.873544!3d-7.117534!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace7e4ad474b33%3A0xf369438c4f027a27!2sFaculdade%20da%20Para%C3%ADba!5e0!3m2!1spt-BR!2sbr!4v1717088536747!5m2!1spt-BR!2sbr" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>     
-       </section>
-    <footer>
-
-       
-
-        <section class="footer-container" id="footer-container">
-           
-            <figure class="footer-logo">
-                <img src="/ProjetoA3/img/png-transparent.png" alt="Logo">
-            </figure>
-
-            <div class="footer-icons">
-                <div class="groupIcon">
-                    <div class="instagram iconFooter">
-                    <img src="/ProjetoA3/img/instagram.png" alt="">
-                    </div>
-                    
-                </div>
-                <div class="groupIconWhatsapp">
-                    <div class="whatsapp iconFooter">
-                    <img src="/ProjetoA3/img/whatsapp.png" alt="">
-                    </div>
-                    
-                </div>
-                
-                <div class="groupIconTelefone">
-                    <div class="telefone iconFooter">
-                    <img src="/ProjetoA3/img/telefone.png" alt="">
-                    </div>
-                    
-                </div>
-                <div class="groupIconEmail">
-                    <div class="email iconFooter">
-                    <img src="/ProjetoA3/img/email.png" alt="">
-                    </div>
-                    
-                </div>
-                
-            </div>
-            <section class="footerLinks">
-                <ul class="listaHeader">
-                <li><a href="#contentHeader" class="linksContent"><strong>Home</strong></a></li>
-                <li><a target="_blank" href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwihxqC8-7WGAxV5H60GHY5QBLIYABAAGgJwdg&ase=2&gclid=EAIaIQobChMIocagvPu1hgMVeR-tBh2OUASyEAAYASAAEgJTlvD_BwE&ohost=www.google.com&cid=CAASJORo2z_L04-7l8xN5wwLLeoyb_LUUmydpFupoADMiGPWlJiZ_g&sig=AOD64_2ZUqtr8eFJXuDRXgsQQrSszneAxA&q&nis=4&adurl&ved=2ahUKEwih7pW8-7WGAxUAqJUCHXi_DFgQ0Qx6BAgnEAE"  class="linksContent"><strong>Nossa Equipe</strong></a></li>
-            </ul>
-            </section>
-         
-        </section>
-
-        <div class="footer-copyright">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>        
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>        
         </div>
-    </footer>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const loginType = document.getElementById('login-type').value;
+            const identifier = document.getElementById('identifier').value;
+            const senha = document.getElementById('senha').value;
+            const errorMessageElement = document.getElementById('error-message');
 
-    <script src="script.js"></script>
+            const loginData = loginType === 'institucional' ? { LOGIN: identifier, SENHA: senha } : { email: identifier, senha: senha };
+            const url = loginType === 'institucional' ? '/auth/login' : '/authProfissional/login';
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(loginData)
+                });
+
+                const data = await response.json();
+                if (data.token && (data.instituicaoId || data.profissionalId)) {
+                    alert('Login bem-sucedido!');
+                    localStorage.setItem('token', data.token);
+                    if (loginType === 'institucional') {
+                        localStorage.setItem('instituicaoId', data.instituicaoId);
+                        window.location.href = '/';
+                    } else {
+                        localStorage.setItem('profissionalToken', data.token);
+                        localStorage.setItem('profissionalId', data.profissionalId);
+                        window.location.href = '/profissional-agendamentos';
+                    }
+                } else {
+                    errorMessageElement.textContent = 'Resposta de login inválida';
+                }
+            } catch (error) {
+                errorMessageElement.textContent = 'Falha no login';
+            }
+        });
+    </script>
 </body>
 </html>
